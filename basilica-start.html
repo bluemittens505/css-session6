@@ -28,11 +28,17 @@
 		<!-- 1. Branding -->
 		<header class="branding">
 			<h1>Basilica!</h1>
+
 			<div class="rect-container">
 				<div class="rect copy">Beta!</div>
 				<div class="rect one"> </div>
 				<div class="rect two"> </div>
 				<div class="rect three"> </div>
+			</div>
+
+			<div class="betainfo">
+				<h3>Beta Information</h1>
+				<p>Information about the beta will be available here once we learn git.</p>
 			</div>
 		</header>
 
@@ -116,6 +122,17 @@
 		</footer>
 
 	</div><!-- end wrapper -->
+
+<!-- load jQuery -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+	$('.rect-container').on('click', function(){
+		$('.betainfo').toggleClass('betainfo-show');
+	});
+</script>
+
+
 </body>
 </html>
 

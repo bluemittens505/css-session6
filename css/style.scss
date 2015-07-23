@@ -1,5 +1,9 @@
 	$green: #88a308;
 	$borders: 4px;
+// break points
+	$small: 860px;
+	$medium: 1080px;
+
 
 	@import url(../futura/stylesheet.css) screen;
 	* {
@@ -37,6 +41,7 @@
 		margin: 0 auto;
 		padding-top: 50px;
 	}
+
 	.content_main {
 		float: left;
 		width: 50%;
@@ -69,6 +74,24 @@
 		height: 120px;
 		background: $green;
 		border-radius: 8px 8px 0 0;
+
+		.betainfo {
+			display: none;
+			width: 300px;
+			min-height: 120px;
+			background-color: $green;
+			color: #fff;
+			position: absolute;
+			top: 10px;
+			left: calc(50% - 150px);
+			border: 2px solid #fff;
+			border-radius: $borders;
+		}
+
+		.betainfo-show {
+			display: block;
+		}
+
 	}
 	header h1 {
 		background: url(../img/basil.png) no-repeat;
@@ -127,6 +150,14 @@
 		background: url(../img/btns.png) no-repeat;
 		border-radius: 6px;
 	}
+
+	@media screen and (max-width: $small) {
+		a {
+			width: 95px;
+			line-height: 52px;
+			font-size: 1.8em;
+		}	
+	}
 }
 	.nav_pickit a {
 		background-position: 0 0;
@@ -174,16 +205,13 @@
 
 
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: $small) {
 
 	.branding h2 {
 		display: none;
 	}
 	.nav_main p {
 		display: none;
-	}
-	.nav_features a {
-		width: 95px;
 	}
 	.content_main, .content_sub {
 		width: 100%;
@@ -194,7 +222,7 @@
 		padding: 6px;
 	}
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: $medium) {
 	.branding h2 {
 		right: 10px;
 	}
@@ -209,32 +237,44 @@
 	cursor: pointer;
 	-webkit-transform: scale(0.4) rotate(15deg);
 	-webkit-transition: all 0.5s linear;
-}
-.rect-container:hover {
-		-webkit-transform: scale(0.5) rotate(0deg);
-}
-.rect {
-	background-color: #f90;
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.copy {
-	color: #fff;
-	z-index: 9999;
-	font-size: 5em;
-	text-align: center;
-	line-height: 200px;
-}
-.two {
-	-webkit-transform: rotate(30deg);
-}
-.three {
-	-webkit-transform: rotate(60deg);
-}
 
+	&:hover {
+		-webkit-transform: scale(0.5) rotate(0deg);
+	}
+
+	@media screen and (max-width: $small) {
+		top: -50px;
+		right: 10px;
+		-webkit-transform: scale(0.3);
+	}
+
+	@media screen and (max-width: $medium) {
+		right: 20px;
+	}
+
+	.rect {
+		background-color: #f90;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.copy {
+		color: #fff;
+		z-index: 9999;
+		font-size: 5em;
+		text-align: center;
+		line-height: 200px;
+	}
+	.two {
+		-webkit-transform: rotate(30deg);
+	}
+	.three {
+		-webkit-transform: rotate(60deg);
+	}
+
+}
 
 
 
